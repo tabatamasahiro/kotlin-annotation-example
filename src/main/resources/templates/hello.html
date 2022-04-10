@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<from method="get" action="#" th:object="${abcBody}">
+    hello
+    <ul th:if="${#fields.hasAnyErrors()}">                <!-- (1) -->
+        <li th:each="err : ${#fields.detailedErrors()}"
+            th:text="${err.message}"
+            class="error">
+            エラー
+        </li>
+    </ul>
+    <BR>
+    <BR>
+    <label>A</label>
+    <input type="text" th:field="*{A}">
+    <div th:if="${#fields.hasErrors('A')}" th:errors="*{A}"></div><br>
+
+    <label>B</label>
+    <input type="text" th:field="*{B}">
+    <div th:if="${#fields.hasErrors('B')}" th:errors="*{B}"></div><br>
+</from>
+</body>
+</html>
