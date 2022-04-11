@@ -24,20 +24,22 @@ class ExampleControllor {
         result: BindingResult,
         model: Model
     ): String {
-        println("!!!!!!")
+
+        println("----------------start")
+
         println(abcBody.toString())
+
         if (result.hasErrors()) {
             for (fieldError in result.getFieldErrors()) {
                 println(">>" + fieldError.toString())
             }
-            println("*****************")
+
             for (allError in result.allErrors) {
                 println(allError.toString())
-                println("----")
                 println("**" + allError.defaultMessage)
             }
         }
-//        model.addAttribute("abcBody", abcBody)
+
         return "hello"
     }
 }

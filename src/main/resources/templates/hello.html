@@ -23,6 +23,14 @@
     <label>B</label>
     <input type="text" th:field="*{B}">
     <div th:if="${#fields.hasErrors('B')}" th:errors="*{B}"></div><br>
+
+    <label>D</label>
+    <input type="text" th:field="*{D}">
+    <div th:if="${#fields.hasErrors('D')}" th:errors="*{getD()}"></div><br>
+
+    <label>E</label>
+    <input type="text" th:field="*{E}">
+    <div th:if="${#fields.hasErrors('goodMorning')}" th:errors="*{goodMorning}"></div><br>
 </from>
 </body>
 </html>
